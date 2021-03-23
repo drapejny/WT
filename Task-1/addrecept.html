@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AddRecept</title>
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <div class="header__section">
+                <img src="logo.png" alt="Котелок" width="120" height="120">
+                <h1>recepty.by</h1>
+            </div>
+            <div class="header__section">
+                <nav><a href="index.html">Главная</a>
+                    <a href="recepty.html">Рецепты</a>
+                    <a href="poisk.html">Поиск по сайту</a>
+                </nav>              
+            </div>
+            <div class="header__section">
+                <a href="addrecept.html">Добавить рецепт</a>
+            </div>
+        </header>
+        <div class="content">
+            <div class="sidebar">
+                <div class="sidebar__section">
+                    <h2><b>Рецепты</b></h2>
+                    <a href="recepty.html#zakuski"><div class="sidebar__item"><span>Закуски</span></div></a>
+                    <a href="recepty.html#goryachee"><div class="sidebar__item"><span>Горячее</span></div></a>
+                    <a href="recepty.html#supy"><div class="sidebar__item"><span>Супы</span></div></a>
+                    <a href="recepty.html#salaty"><div class="sidebar__item"><span>Салаты</span></div></a>
+                    <a href="recepty.html#sousy"><div class="sidebar__item"><span>Соусы</span></div></a>
+                    <a href="recepty.html#deserty"><div class="sidebar__item"><span>Десерты</span></div></a>
+                </div>
+
+                <div class="sidebar__section">
+                   <h2>Полпулярное</h2>
+                   <a href="#"><img src="sidebar-imgs/kalmar-salat.jpg" alt="" width="200"></a>
+                    <p><a href="#">Салат из кальмаров</a></p>
+                    <a href="#"><img src="sidebar-imgs/karri.jpg" alt="" width="200"></a>
+                    <p><a href="#">Соус Карри</a></p>
+                    <a href="#"><img src="sidebar-imgs/medovik.jpg" alt="" width="200"></a>
+                    <p><a href="#">Торт медовый</a></p>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main__section">
+                    <form><p><h2>Добавть рецепт</h2></p></form>
+                    <p>Введите назваие блюда:</p>
+                    <p><input type="text" id="name"></p>
+                    <p>Выберите соответствующие ващему блюду категории:</p>
+                    <p><input type="checkbox">  Закуски</p>
+                    <p><input type="checkbox">  Горячее</p>
+                    <p><input type="checkbox">  Супы</p>
+                    <p><input type="checkbox">  Салаты</p>
+                    <p><input type="checkbox">  Соусы</p>
+                    <p><input type="checkbox">  Десерты</p>
+                    <p>Введите ингридиенты для вашего блюда (через запятую):</p>
+                    <p><input type="text" id="ingridients"></p>
+                    <p>Добавьте фото вашего блюда:</p>
+                    <p><div class="addimg-block">Добавить фото</div></p>
+                    <p>Опишите процесс приготовления вашего блюда:</p>
+                    <p><textarea id="opisanie"></textarea></p>
+                    <input type="submit" value="Готово" width="100" height="50">
+                    
+                    
+                    
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar__section">
+                    <h2>Лучшее</h2>
+                    <a href="#"><img src="sidebar-imgs/keksi.jpg" alt="" width="200"></a>
+                    <p><a href="#">Яблочные кексы</a></p>
+                    <a href="#"><img src="sidebar-imgs/meat-pie.jpg" alt="" width="200"></a>
+                    <p><a href="#">Мясной пирог</a></p>
+                    <a href="#"><img src="sidebar-imgs/cheese-soup.jpg" alt="" width="200"></a>
+                    <p><a href="#">Сырный суп</a></p>
+                    <a href="#"><img src="sidebar-imgs/zapekanka.jpg" alt="" width="200"></a>
+                    <p><a href="#">Запеканка с вишнёвым соусом</a></p>
+                    <a href="#"><img src="sidebar-imgs/salat-s-krevetkami.jpg" alt="" width="200"></a>
+                    <p><a href="#">Салат с креветками и икрой</a></p>
+                    <a href="#"><img src="sidebar-imgs/napoleon.jpg" alt="" width="200"></a>
+                    <p><a href="#">Торт "Наполеон"</a></p>
+
+                </div>
+            </div>
+        </div>
+        <footer>Контакты для связи: recepty228@mail.ru<br>
+            Copyright © recepty.by, 2020-2021. Все права защищены.
+        </footer>
+    </div>
+</body>
+</html>
