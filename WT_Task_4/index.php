@@ -12,18 +12,6 @@
         text-align: center;
         align-items: center;
     }
-
-    .int-num{
-        color:blue;
-    }
-
-    .float-num{
-        color:red;
-    }
-    .uppercase-letter-word{
-        color: green;
-    }
-
     </style>
 </head>
 
@@ -35,23 +23,31 @@
         <p><input type="submit" value="Отправить"></p>
     </form>
   <?php
+  function myRound($stringValue){
+      echo '!' . $stringValue . '!';
+      $floatValue = floatval($stringValue);
+      $floatValue = round($floatValue,1);
+      return $floatValue;
+  }
     if (array_key_exists("text",$_POST)){
         $text = htmlentities($_POST["text"]);
-        $words = preg_split('/\s+/',$text);
-        echo "$text <br><br>";
-        foreach($words as $word){
-            if(preg_match('/^[+-]?\d+$/',$word))
-                 echo "<span class='int-num'>$word</span> ";
-            else if(preg_match('/^[-+]?[0-9]*[.,][0-9]+(?:[eE][-+]?[0-9]+)?$/',$word)){
-                $rounded_num = round($word,1);
-                echo "<span class='float-num'>$rounded_num</span> ";
-            }
-            else
-                if(preg_match('/^[A-ZА-ЯЁ].*$/',$word))
-                echo "<span class='uppercase-letter-word'>$word</span> ";
-                else
-                echo "$word ";
-        }
+        $text = preg_replace('/\n/',"\n<br>\n",$text);
+        echo $text . '<br><br>';
+        $text = preg_replace_callback_array(
+            [
+                '/((?<=\s|^)[+-]?\d+(?=\s|$))/' => function ($match) {
+                    return "<span style='color: blue;'>$match[0]</span>";
+                },
+                '/((?<=\s|^)[+-]?(0|[1-9]\d*)\.(0|\d*[1-9])(?=\s|$))/' => function($match){
+                    return "<span style='color: red;'>" . round(floatval($match[0]),1) . "</span>";
+                },
+                '/((?<=\s|^)[A-ZА-ЯЁ]\S*(?=\s|$))/' => function($match){
+                    return "<span style='color:#00FF00;'>$match[0]</span>";
+                }
+            ],
+            $text
+        );
+        echo $text;
     }
   ?>
 
